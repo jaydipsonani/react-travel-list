@@ -21,7 +21,7 @@ function Form({ onAddItems }) {
   return (
     <>
       <form className="add-form" onSubmit={handleSumbit}>
-        <h3>What do you need for your 😍 trip?</h3>
+        <h3>What do you need for your 😍 Udaipur trip?</h3>
         {/* <select
           value={quantity}
           onChange={(e) => setQuantity(parseInt(e.target.value))}
