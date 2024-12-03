@@ -2,7 +2,6 @@ import { useState } from "react";
 
 function Form({ onAddItems }) {
   const [description, setDescription] = useState("");
-  const [quantity, setQuantity] = useState(1);
 
   function handleSumbit(e) {
     e.preventDefault();
@@ -13,27 +12,30 @@ function Form({ onAddItems }) {
       return;
     }
 
-    const newItems = { quantity, description, packed: false, id: Date.now() };
+    const newItems = { description, packed: false, id: Date.now() };
     console.log(newItems);
     onAddItems(newItems);
     setDescription("");
-    setQuantity(1);
   }
 
   return (
     <>
       <form className="add-form" onSubmit={handleSumbit}>
         <h3>What do you need for your 😍 trip?</h3>
-        <select
+        {/* <select
           value={quantity}
           onChange={(e) => setQuantity(parseInt(e.target.value))}
+          style={{
+            maxHeight: "60px",
+            overflowY: "auto",
+          }}
         >
-          <option value={1}>1</option>
-          <option value={2}>2</option>
-          <option value={3}>3</option>
-          <option value={4}>4</option>
-          <option value={5}>5</option>
-        </select>
+          {Array.from({ length: 100 }, (_, i) => (
+            <option key={i + 1} value={i + 1}>
+              {i + 1}
+            </option>
+          ))}
+        </select> */}
         <input
           type="text"
           style={{ cursor: "text" }}
